@@ -10,7 +10,7 @@ interface IPageParams {
 
 export default async function Page({ params }: { params: Promise<IPageParams> }) {
   const { slug } = await params;
-  const page = await getPageBySlug(slug[0]);
+  const page = await getPageBySlug(slug?.length ? slug[0] : 'industry-experts');
 
   if (!page) {
     notFound();

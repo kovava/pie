@@ -9,7 +9,15 @@ const nextConfig: NextConfig = {
         port: '1337',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'strapi-pie.kovava.com',
+        port: '',
+        pathname: '/uploads/**',
+      },
+
     ],
-  },};
+  },
+};
 
 export default nextConfig;

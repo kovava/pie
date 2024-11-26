@@ -18,14 +18,14 @@ const HomePageTemplate = (props: IOwnProps) => {
                 {props.page.description && <BlocksRenderer content={props.page.description} />}
             </div>
             <div className={styles.main}>
+                <div className={styles.content}>
+                    {props.page.content && <BlocksRenderer content={props.page.content} />}
+                </div>
                 {props.page.image && (
                     <div className={styles.image}>
                         <Image src={`${process.env.STRAPI_URL}${props.page.image.url}`} alt={props.page.title} width={props.page.image.width} height={props.page.image.height} />
                     </div>
                 )}
-                <div className={styles.content}>
-                    {props.page.content && <BlocksRenderer content={props.page.content} />}
-                </div>
                 <div className={styles.menu}>
                     <Menu currentRoute={props.currentRoute} />
                 </div>
